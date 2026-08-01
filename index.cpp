@@ -1,13 +1,14 @@
 #include<iostream>
-using namespace std; 
+using namespace std;
 
-void greetings() { 
-    cout<<"Hello, welcome to the C++20 project!"<<endl;
+void printNumber(){
+
+    int n = 5; 
+    cout<<n; 
+    
 }
 
-int main() { 
+int main(){
     
-    greetings(); 
-    return 0; 
-
+    printNumber() ; 
 }
