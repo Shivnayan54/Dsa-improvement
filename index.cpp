@@ -1,20 +1,23 @@
 #include<iostream>
 using namespace std; 
 
-int fact (){ 
+bool isprime(int n) { 
+        if( n == 1){
+            return false ; 
+        }
 
-    int factor = 1; 
-    int n = 5; 
-    for (int i=n; i>0 ;i--){
-        factor *= i ;  
-    }
+        for(int i=2; i<=n-1; i++){ 
+            if(n%i == 0){
+                return false;
+            }
+        }
 
-    return factor; 
+        return true; 
 }
 
-int main(){ 
+int main() { 
+    cout << isprime(3) << endl ; 
 
-   cout<< fact() ; 
     return 0; 
-
+    
 }
