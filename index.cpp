@@ -1,20 +1,20 @@
 #include<iostream>
 using namespace std; 
 
-void oddeven(){
-    
-    int n; 
-    cout<<"enter a number: " ;
-     cin>>n ;
+int fact (){ 
 
-     if( n %2 ==0) { 
-        cout<<"even number";  
-     }else {
-        cout<<"odd number";  
-     }
+    int factor = 1; 
+    int n = 5; 
+    for (int i=n; i>0 ;i--){
+        factor *= i ;  
+    }
+
+    return factor; 
 }
 
 int main(){ 
 
-    oddeven() ; 
+   cout<< fact() ; 
+    return 0; 
+
 }
