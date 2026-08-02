@@ -1,14 +1,20 @@
 #include<iostream>
-using namespace std;
+using namespace std; 
 
-void printNumber(){
-
-    int n = 5; 
-    cout<<n; 
+void oddeven(){
     
+    int n; 
+    cout<<"enter a number: " ;
+     cin>>n ;
+
+     if( n %2 ==0) { 
+        cout<<"even number";  
+     }else {
+        cout<<"odd number";  
+     }
 }
 
-int main(){
-    
-    printNumber() ; 
+int main(){ 
+
+    oddeven() ; 
 }
