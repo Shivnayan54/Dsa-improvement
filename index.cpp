@@ -1,23 +1,31 @@
 #include<iostream>
+
 using namespace std; 
+ 
+int factorial(int n)
+{ 
+    int fact = 1; 
 
-bool isprime(int n) { 
-        if( n == 1){
-            return false ; 
-        }
+    for (int i =1; i<=n ; i++){
+        fact = fact*i ; 
+    }
 
-        for(int i=2; i<=n-1; i++){ 
-            if(n%i == 0){
-                return false;
-            }
-        }
-
-        return true; 
+    return fact; 
 }
 
-int main() { 
-    cout << isprime(3) << endl ; 
+int factorialCoefficient(int n, int r)
+{ 
+    int ans = factorial(n) / (factorial(r) * factorial(n - r)); 
+    return ans; 
+}
 
-    return 0; 
-    
+int main()
+{
+    int n, r; 
+
+    cout << "Enter n and r: "; 
+    cin >> n >> r; 
+
+    cout << "Binomial Coefficient = "<<factorialCoefficient(n, r); 
+         
 }
