@@ -1,31 +1,33 @@
 #include<iostream>
-
 using namespace std; 
- 
-int factorial(int n)
-{ 
-    int fact = 1; 
 
-    for (int i =1; i<=n ; i++){
-        fact = fact*i ; 
+int sumArray(int arr[] , int n){ 
+
+    int sum = 0; 
+
+    for(int i=0; i<5; i++){ 
+        
+        sum += arr[i] ;
     }
 
-    return fact; 
+    return sum; 
+
 }
 
-int factorialCoefficient(int n, int r)
-{ 
-    int ans = factorial(n) / (factorial(r) * factorial(n - r)); 
-    return ans; 
-}
+int main() { 
+    int n; 
+    cout<<"enter the size of the array: "; 
+    cin>>n; 
 
-int main()
-{
-    int n, r; 
+    int arr[n]; 
+    
+    cout<< "Enter " << n <<" elements: " << endl; 
+    for(int i=0; i<n ; i++) {
+        cin>> arr[i] ; 
+    } 
 
-    cout << "Enter n and r: "; 
-    cin >> n >> r; 
+    int totalSum = sumArray(arr, n); 
+    cout << "The sum of the array element is: " << totalSum << endl; 
 
-    cout << "Binomial Coefficient = "<<factorialCoefficient(n, r); 
-         
+    return 0;
 }
