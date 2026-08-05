@@ -1,33 +1,20 @@
 #include<iostream>
 using namespace std; 
 
-int sumArray(int arr[] , int n){ 
+void printArray( int arr[] , int  n){
 
-    int sum = 0; 
-
-    for(int i=0; i<5; i++){ 
-        
-        sum += arr[i] ;
+    for(int i=0; i<n ;i++){
+        cout<<arr[i] << " "; 
     }
-
-    return sum; 
-
 }
 
-int main() { 
-    int n; 
-    cout<<"enter the size of the array: "; 
-    cin>>n; 
+int main()
+    {
+        int arr[] = {1, 2, 3, 4, 5}; 
+        int n = sizeof(arr) / sizeof(arr[0]); 
 
-    int arr[n]; 
-    
-    cout<< "Enter " << n <<" elements: " << endl; 
-    for(int i=0; i<n ; i++) {
-        cin>> arr[i] ; 
-    } 
+        printArray(arr, n ); 
 
-    int totalSum = sumArray(arr, n); 
-    cout << "The sum of the array element is: " << totalSum << endl; 
+        return 0; 
 
-    return 0;
-}
+    }
