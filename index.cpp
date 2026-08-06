@@ -1,29 +1,25 @@
 #include<iostream>
 using namespace std; 
 
-int largestElement( int arr[], int n){
+int linearSearch(int arr[] , int n , int target){ 
 
-    int largest = arr[0]; 
-
-    for(int i = 0; i < n ; i++)
-    
-    if( largest < arr[i]){
-        largest = arr[i]; 
+    for (int i = 0; i< n ;i++){ 
+        
+        if (arr[i] == target){ 
+            return i; 
+        }
     }
+    return -1; 
+}
 
-    return largest ; 
-}    
+int main() {
+    int arr[] = {10, 20, 30, 40, 50};
+    int n = 5;
+    int target = 30;
 
-int main(){
-    
-    int arr[] = {10 , 20, 30, 40, 50}; 
+    int index = linearSearch(arr, n, target);
 
-    int n = sizeof(arr) / sizeof(arr[0]); 
+    cout << "Index = " << index;
 
-    int ans = largestElement(arr , n); 
-
-    cout<< "Largest element is: " << ans; 
-    
-    return 0; 
-
+    return 0;
 }
