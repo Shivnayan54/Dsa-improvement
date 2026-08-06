@@ -1,27 +1,29 @@
 #include<iostream>
 using namespace std; 
 
-int sumArray( int arr[] , int n){
+int largestElement( int arr[], int n){
 
-    int sum = 0; 
+    int largest = arr[0]; 
 
-    for(int i=0; i<n ;i++){ 
-        sum += arr[i]; 
-    } 
+    for(int i = 0; i < n ; i++)
+    
+    if( largest < arr[i]){
+        largest = arr[i]; 
+    }
 
-    return sum ;
-}
+    return largest ; 
+}    
 
-int main() {
+int main(){
+    
+    int arr[] = {10 , 20, 30, 40, 50}; 
 
-    int arr[] = {1 , 2 , 3, 4, 5}; 
     int n = sizeof(arr) / sizeof(arr[0]); 
 
+    int ans = largestElement(arr , n); 
 
-    int answer =  sumArray( arr , n); 
-
-    cout<< answer; 
-
+    cout<< "Largest element is: " << ans; 
+    
     return 0; 
 
 }
