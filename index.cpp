@@ -1,37 +1,26 @@
-#include<iostream> 
+#include<iostream>
 using namespace std; 
 
-void reverseArray(int arr[] , int n){ 
-
-    int left = 0; 
-    int right = n-1; 
-
-   while(left < right){
-
-        int temp = arr[left]; 
-        arr[left] = arr[right]; 
-        arr[right] = temp; 
-
-        left++; 
-        right--; 
-    } 
-}
-
-void printArray(int arr[] , int n)
-{
-    for(int i = 0; i < n; i++){
-        cout<<arr[i] << " "; 
+bool isSorted(int arr[] , int n){
+    for(int i =0; i<n ;i++){ 
+        if(arr[i] > arr[i + 1]){
+            return false; 
+        }
     }
+
+    return true ;
 }
 
-int main()
-{
-    int arr[] = {10 ,20 ,30 ,40 ,50}; 
+int main() 
+{ 
+    int arr[] = {1 ,2 ,3 ,4 ,5}; 
     int n = 5; 
 
-    reverseArray(arr, n); 
-
-    printArray(arr, n); 
-
+    if(isSorted(arr, n)){
+        cout << "Array is Sorted"; 
+    }else
+    {
+        cout << "Array is Not Sorted"; 
+    }
     return 0; 
 }
