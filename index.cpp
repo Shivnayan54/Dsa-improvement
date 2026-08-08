@@ -1,32 +1,32 @@
 #include<iostream>
 using namespace std; 
 
-// Scecond Largest Element in an array 
+void LeftRotateByOne( int arr[] , int n){
 
-int SecondLargest(int arr[] , int n){
+    int first = arr[0]; 
 
-    int largest = arr[0]; 
-    int second = -1; 
-
-    for(int i=1; i<n ;i++){ 
-
-        if(arr[i] > largest){
-            second = largest; 
-            largest = arr[i]; 
-        }
-        else if(arr[i] > second && arr[i] != largest){ 
-            second = arr[i];
-        }
+    for(int i=0; i<n-1 ; i++)
+    { 
+        arr[i] = arr[i+1]; 
     }
-    return second; 
-} 
-  
+    
+    arr[n - 1] = first ; 
+}
+
+void printArray(int arr[] , int n)
+{
+    for (int i=0; i<n ; i++){ 
+        cout<< arr[i] << " "; 
+
+    }
+}
+
 int main(){
-    int arr[] = {10 ,20 ,30 ,40 , 50}; 
-    int n = sizeof(arr)/sizeof(arr[0]);
+     int arr[] = {1, 2,3 ,4 ,5 }; 
+     int n = 5; 
 
-    int result = SecondLargest(arr , n);
+     LeftRotateByOne(arr , n); 
+     printArray(arr , n); 
 
-    cout<< "The Second Largest Element in the array is: " << result << endl;
-    return 0; 
+     return 0; 
 }
