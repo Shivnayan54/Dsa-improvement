@@ -1,32 +1,22 @@
 #include<iostream>
-using namespace std; 
+using namespace std;
 
-void LeftRotateByOne( int arr[] , int n){
+void binToDec(int binNum) {
+    int n = binNum; 
+    int decNum = 0; 
+    int pow = 1; 
 
-    int first = arr[0]; 
-
-    for(int i=0; i<n-1 ; i++)
-    { 
-        arr[i] = arr[i+1]; 
+    while(n > 0) {
+        int lasDig = n % 10; 
+        decNum += lasDig * pow;
+        pow *= 2;
+        n /= 10;
     }
-    
-    arr[n - 1] = first ; 
+
+    cout << "Decimal equivalent of " << binNum << " is: " << decNum << endl;
 }
 
-void printArray(int arr[] , int n)
-{
-    for (int i=0; i<n ; i++){ 
-        cout<< arr[i] << " "; 
-
-    }
-}
-
-int main(){
-     int arr[] = {1, 2,3 ,4 ,5 }; 
-     int n = 5; 
-
-     LeftRotateByOne(arr , n); 
-     printArray(arr , n); 
-
-     return 0; 
+int main() {
+    binToDec(101);
+    return 0; 
 }
