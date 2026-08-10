@@ -1,26 +1,15 @@
-#include<iostream>
-#include<string>
-using namespace std;
+#include<iostream> 
+using namespace std; 
 
-void reverseString(string &s){
-    int left = 0; 
-    int right = s.length() - 1; 
+int main(){ 
+    int a = 10; 
 
-    while(left<right){
-        char temp = s[left]; 
-        s[left] = s[right]; 
-        s[right] = temp; 
+    int *ptr = &a; 
 
-        left++; 
-        right--; 
-    }
-}
+    int **pptr = &ptr; 
 
-int main() { 
-    string s = "meeaw"; 
+    cout<< &ptr << " = "<<pptr<<"\n"; 
 
-    reverseString(s);
+    return 0; 
 
-    cout<<s; 
-    return 0;
 }
