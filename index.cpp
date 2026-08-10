@@ -1,9 +1,8 @@
 #include<iostream>
 #include<string>
-using namespace std; 
+using namespace std;
 
-void reverseString(string &s)
-{
+void reverseString(string &s){
     int left = 0; 
     int right = s.length() - 1; 
 
@@ -18,10 +17,10 @@ void reverseString(string &s)
 }
 
 int main() { 
-    string s = "hello"; 
+    string s = "meeaw"; 
 
-    reverseString(s); 
-    cout << s; 
+    reverseString(s);
 
-    return 0; 
+    cout<<s; 
+    return 0;
 }
