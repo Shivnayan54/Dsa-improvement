@@ -1,15 +1,9 @@
-#include<iostream> 
+#include<iostream>
 using namespace std; 
 
-int main(){ 
-    int a = 10; 
-
-    int *ptr = &a; 
-
-    int **pptr = &ptr; 
-
-    cout<< &ptr << " = "<<pptr<<"\n"; 
-
+int main() { 
+    int a = 10 ; 
+    cout<< &a << "\n"; 
+    cout << *(&a)<< "\n"; 
     return 0; 
-
 }
