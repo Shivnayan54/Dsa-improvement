@@ -1,16 +1,14 @@
 #include<iostream>
 using namespace std; 
+int main(){ 
+    int x = 5 , y = 10; 
 
-void changeA(int *ptr) {
-    *ptr = 20; 
-    cout << *ptr << "\n"; 
-}
+    int *ptr1 = &x,  *ptr2 = &y;
+    ptr2 = ptr1; 
 
-int main() {
-    int a = 10; 
-    changeA(&a); 
-
-    cout<< a << "\n"; 
+    cout << ptr2 <<"\n"; 
+    cout << ptr1 <<"\n"; 
+    cout << &x <<"\n"; 
     return 0; 
     
-}  
+}
