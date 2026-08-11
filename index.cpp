@@ -1,9 +1,16 @@
 #include<iostream>
 using namespace std; 
 
-int main() { 
-    int a = 10 ; 
-    cout<< &a << "\n"; 
-    cout << *(&a)<< "\n"; 
-    return 0; 
+void changeA(int *ptr) {
+    *ptr = 20; 
+    cout << *ptr << "\n"; 
 }
+
+int main() {
+    int a = 10; 
+    changeA(&a); 
+
+    cout<< a << "\n"; 
+    return 0; 
+    
+}  
