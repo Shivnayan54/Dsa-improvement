@@ -1,31 +1,27 @@
-#include <iostream>
-#include <string>
+#include<iostream>
+#include<string>
 using namespace std;
+
+void reverseString(string &s){
+    int left = 0; 
+    int right = s.length() - 1; 
+
+    while(left < right)
+    {
+        char temp = s[left]; 
+        s[left] = s[right]; 
+        s[right] = temp; 
+
+        left++; 
+        right--; 
+    }
+}
 
 int main()
 {
-    string s = "hello"; 
+    string s ="hello"; 
 
-    int vowels = 0;                                               
-    int consonants = 0;                                     
-
-    for(int i = 0; i < s.length(); i++)                          
-    {                                                    
-        char ch = s[i];                                                                         
-
-        if(ch == 'a' || ch == 'e' || ch == 'i' ||
-           ch == 'o' || ch == 'u')
-        {
-            vowels++;
-        }
-        else if(ch >= 'a' && ch <= 'z')
-        {
-            consonants++;
-        }
-    }
-
-    cout << "Vowels = " << vowels << endl;
-    cout << "Consonants = " << consonants;
-
-    return 0;
+    reverseString(s); 
+    cout << s; 
+    return 0; 
 }
