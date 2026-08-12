@@ -1,14 +1,31 @@
-#include<iostream>
-using namespace std; 
-int main(){ 
-    int x = 5 , y = 10; 
+#include <iostream>
+#include <string>
+using namespace std;
 
-    int *ptr1 = &x,  *ptr2 = &y;
-    ptr2 = ptr1; 
+int main()
+{
+    string s = "hello"; 
 
-    cout << ptr2 <<"\n"; 
-    cout << ptr1 <<"\n"; 
-    cout << &x <<"\n"; 
-    return 0; 
-    
+    int vowels = 0;                                               
+    int consonants = 0;                                     
+
+    for(int i = 0; i < s.length(); i++)                          
+    {                                                    
+        char ch = s[i];                                                                         
+
+        if(ch == 'a' || ch == 'e' || ch == 'i' ||
+           ch == 'o' || ch == 'u')
+        {
+            vowels++;
+        }
+        else if(ch >= 'a' && ch <= 'z')
+        {
+            consonants++;
+        }
+    }
+
+    cout << "Vowels = " << vowels << endl;
+    cout << "Consonants = " << consonants;
+
+    return 0;
 }
