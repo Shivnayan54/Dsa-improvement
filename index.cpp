@@ -2,31 +2,28 @@
 #include<string>
 using namespace std;
 
-bool isPalindrome(string s)
-{
-  char left = 0; 
-  char right = s.length() - 1; 
-  
-  while(left < right ) { 
-    if(s[left] != s[right]){ 
-        return false; 
-    }
-    left++; 
-    right--; 
-
-  }
-  return true; 
-}
-
-int main(){
-    string s  = "madam"; 
+int main() 
+{ 
+    string h = "hello"; 
+    int vowels = 0; 
+    int consonents = 0; 
     
-    if(isPalindrome(s))
-    {
-        cout << "Palindrome"; 
+    for(int i=0; i< h.length()-1; i++){ 
+
+        char ch = h[i]; 
+
+        if(ch == 'a' || ch == 'e' || ch == 'i' || ch == 'o' || ch == 'u')
+        {
+            vowels++; 
+        }
+        else if(ch >= 'a' && ch <= 'z')
+        {
+            consonents++; 
+        }
     }
-    else{
-        cout << "Not Palindrome"; 
-    }
+
+    cout << "vowels = " << vowels << endl; 
+    cout << "Consonants = " << consonents; 
+
     return 0; 
 }
