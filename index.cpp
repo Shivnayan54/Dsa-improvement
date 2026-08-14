@@ -2,26 +2,31 @@
 #include<string>
 using namespace std;
 
-void reverseString(string &s){
-    int left = 0; 
-    int right = s.length() - 1; 
-
-    while(left < right)
-    {
-        char temp = s[left]; 
-        s[left] = s[right]; 
-        s[right] = temp; 
-
-        left++; 
-        right--; 
+bool isPalindrome(string s)
+{
+  char left = 0; 
+  char right = s.length() - 1; 
+  
+  while(left < right ) { 
+    if(s[left] != s[right]){ 
+        return false; 
     }
+    left++; 
+    right--; 
+
+  }
+  return true; 
 }
 
-int main()
-{
-    string s ="hello"; 
-
-    reverseString(s); 
-    cout << s; 
+int main(){
+    string s  = "madam"; 
+    
+    if(isPalindrome(s))
+    {
+        cout << "Palindrome"; 
+    }
+    else{
+        cout << "Not Palindrome"; 
+    }
     return 0; 
 }
